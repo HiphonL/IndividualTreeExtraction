@@ -126,7 +126,7 @@ def train():
 
         ops = {'learning_rate': learning_rate,
                'pointclouds': pointclouds,
-               'vote_labels': vote_labels,
+               'direction_labels': direction_labels,
                'is_training': is_training,
                'loss': loss,
                'loss_esd': loss_esd,
@@ -169,10 +169,10 @@ def train_one_epoch(sess, epoch, train_set, generator, ops):
     total_loss_pd = 0
     for i in tqdm(range(num_batches_training)):
         ###
-        batch_train_data, batch_vote_label_data, _ = next(generator)
+        batch_train_data, batch_direction_label_data, _ = next(generator)
         ###
         feed_dict = {ops['pointclouds']: batch_train_data,
-                     ops['vote_labels']: batch_vote_label_data,
+                     ops['direction_labels']: batch_direction_label_data,
                      ops['is_training']: True}
 
         _, lr, loss, loss_esd_, loss_pd_ = sess.run([ops['train_op'], ops['learning_rate'], ops['loss'],
@@ -199,10 +199,10 @@ def validation(sess, test_set, generator, ops):
     total_loss_pd = 0
     for _ in tqdm(range(num_batches_testing)):
         ###
-        batch_test_data, batch_vote_label_data, _ = next(generator)
+        batch_test_data, batch_direction_label_data, _ = next(generator)
         ###
         feed_dict = {ops['pointclouds']: batch_test_data,
-                     ops['vote_labels']: batch_vote_label_data,
+                     ops['direction_labels']: batch_direction_label_data,
                      ops['is_training']: False,
                      }
         loss_, loss_esd_, loss_pd_ = sess.run([ops['loss'], ops['loss_esd'], ops['loss_pd']], feed_dict=feed_dict)
