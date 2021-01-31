@@ -88,7 +88,7 @@ def train():
         with tf.variable_scope(tf.get_variable_scope()):
             with tf.device('/gpu:0'):
                 pointclouds = tf.placeholder(tf.float32, shape=(BATCH_SIZE, NUM_POINT, 3))
-                vote_labels = tf.placeholder(tf.float32, shape=(BATCH_SIZE, NUM_POINT, 3))
+                direction_labels = tf.placeholder(tf.float32, shape=(BATCH_SIZE, NUM_POINT, 3))
                 is_training = tf.placeholder(tf.bool, shape=())
 
                 #####DirectionEmbedding
@@ -107,8 +107,8 @@ def train():
                 #                                             bn_decay=bn_decay,
                 #                                             k=20)
                 ######
-                loss_esd = Loss.slack_based_direction_loss(DeepPointwiseDirections, vote_labels)
-                loss_pd = Loss.direction_loss(DeepPointwiseDirections, vote_labels)
+                loss_esd = Loss.slack_based_direction_loss(DeepPointwiseDirections, direction_labels)
+                loss_pd = Loss.direction_loss(DeepPointwiseDirections, direction_labels)
                 loss = 1 * loss_esd + 0 * loss_pd + tf.add_n(tf.get_collection('losses'))
 
                 ###optimizer--Adam
