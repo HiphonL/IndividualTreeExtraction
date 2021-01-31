@@ -280,7 +280,7 @@ def individual_tree_extraction(PDE_net_model_path, test_data_path, result_path, 
             num_voxel_xyz = np.ceil(delta_xyz / voxel_size)
             ####
             center_xyz = object_center_list[j, :]
-            ####using padding to fix the situation where the tree center voxel is empty
+            ####use padding to fix the situation where the tree center voxel is empty
             center_xyz_padding = np.array([[center_xyz[0], center_xyz[1], center_xyz[2]],
                                            [center_xyz[0], center_xyz[1], center_xyz[2] - voxel_size],
                                            [center_xyz[0], center_xyz[1], center_xyz[2] + voxel_size]])
@@ -328,7 +328,7 @@ def individual_tree_extraction(PDE_net_model_path, test_data_path, result_path, 
             testdata = np.delete(testdata, temp_object_xyz_index, axis=0)
             xyz_direction = np.delete(xyz_direction, temp_object_xyz_index, axis=0)
 
-        ####using the nearest neighbor assignment to refine those points with large direction errors
+        ####use the nearest neighbor assignment to refine those points with large errors
         for k in range(np.size(xyz_direction, 0)):
             temp_remain_xyz_nor = xyz_direction[k, :3]
             temp_remain_xyz = testdata[k, :3]
@@ -353,5 +353,5 @@ if __name__ == '__main__':
     result_path = './result/'
     if not os.path.exists(result_path): os.mkdir(result_path)
 
-    #######extracting individual trees from tree clusters
+    #######extract individual trees from tree clusters
     individual_tree_extraction(PDE_net_model_path, test_data_path, result_path, voxel_size, Nd, ARe)
