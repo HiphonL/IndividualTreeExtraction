@@ -1,4 +1,4 @@
-# PDE-net
+# Individual Tree Extraction
 
 This is an implement of our paper that has been submitted to ISPRS Journal of Photogrammetry and Remote Sensing:
 
