@@ -18,11 +18,6 @@ This repo does not contain the source code of semantic segmentation. In theory, 
     Tensorflow 1.80
     Cython
 
-# Compile Voxel-based Region Growing:
-
-    cd voxel_region_grow
-    python VoxelRegionGrow_Setup.py build_ext --inplace
-   
 # Train PDE-net:
 
 To train a PDE-net using your own datasets:
@@ -31,6 +26,11 @@ To train a PDE-net using your own datasets:
     python PDE_net_training.py
 
 * Data format of training samples: [x, y, z, tree_id]
+
+# Compile Voxel-based Region Growing:
+
+    cd voxel_region_grow
+    python VoxelRegionGrow_Setup.py build_ext --inplace   
 
 # Extract Individual Trees:
 
