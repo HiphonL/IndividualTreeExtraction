@@ -20,7 +20,7 @@ This repo does not contain the source code of semantic segmentation. In theory, 
 
 # Train PDE-net:
 
-To train a PDE-net using your own datasets:
+To train the PDE-net:
 
     cd backnone_network
     python PDE_net_training.py
