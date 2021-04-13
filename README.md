@@ -47,7 +47,15 @@ To extract the individual trees from tree clusters:
 
 If you find this project useful for your research, please kindly cite our paper:
     
-    Our paper is coming ...
+    @article{luo2021individual,
+    title={Individual tree extraction from urban mobile laser scanning point clouds using deep pointwise direction embedding},
+    author={Luo, Haifeng and Khoshelham, Kourosh and Chen, Chongcheng and He, Hanxian},
+    journal={ISPRS Journal of Photogrammetry and Remote Sensing},
+    volume={175},
+    pages={326--339},
+    year={2021},
+    publisher={Elsevier}
+    }
     
 # Contact
 
