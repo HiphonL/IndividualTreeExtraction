@@ -1,8 +1,8 @@
 # Individual Tree Extraction
 
-This is an implement of our paper that has been submitted to ISPRS Journal of Photogrammetry and Remote Sensing:
+This is an implement of our paper that has been published in ISPRS Journal of Photogrammetry and Remote Sensing:
 
-[**Individual Tree Extraction from Urban Mobile Laser Scanning Point Clouds Using Deep Pointwise Direction Embedding**]()
+[**Individual Tree Extraction from Urban Mobile Laser Scanning Point Clouds Using Deep Pointwise Direction Embedding**](https://www.sciencedirect.com/science/article/pii/S0924271621000654?via%3Dihub)
 
 Haifeng Luo, Kourosh Khoshelham, Chongcheng Chen, and Hanxian He
 
