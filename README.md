@@ -22,7 +22,7 @@ This repo does not contain the source code of semantic segmentation. In theory, 
 
 To train the PDE-net:
 
-    cd backnone_network
+    cd backbone_network
     python PDE_net_training.py
 
 * Data format of training samples: [x, y, z, tree_id]
